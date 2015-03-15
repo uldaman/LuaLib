@@ -1,6 +1,13 @@
 #include <windows.h>
-#include <cLua.h>
+#include <CLua.h>
 #include <string>
+
+extern "C" {
+#include "lua.h"
+#include "lauxlib.h"
+#include "lualib.h"
+#include "luaconf.h"
+}
 
 cLua::cLua() {
     m_pErrorHandler = NULL;

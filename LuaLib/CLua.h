@@ -1,11 +1,6 @@
 #pragma once
 
-extern "C" {
-#include "lua.h"
-#include "lauxlib.h"
-#include "lualib.h"
-#include "luaconf.h"
-}
+struct lua_State;
 
 #define LuaGlue extern "C" int  // ∂®“Â LuaGlue ∫Í
 
