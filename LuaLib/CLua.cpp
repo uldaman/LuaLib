@@ -130,20 +130,19 @@ const char* cLua::GetErrorString(void) {
 }
 
 
-bool cLua::AddFunction(const char* pFunctionName, LuaFunctionType pFunction) {
+void cLua::AddFunction(const char* pFunctionName, LuaFunctionType pFunction) {
     lua_register(m_pScriptContext, pFunctionName, pFunction);
-    return true;
 }
 
-const char* cLua::GetStringArgument(int num, const char* pDefault) {
+const char* cLua::GetStringArgument(int num, const char* pDefault /*= nullptr*/) {
     return luaL_optstring(m_pScriptContext, num, pDefault);
 }
 
-double cLua::GetNumberArgument(int num, double dDefault) {
+double cLua::GetNumberArgument(int num, double dDefault /*= 0.0*/) {
     return luaL_optnumber(m_pScriptContext, num, dDefault);
 }
 
-int cLua::GetIntArgument(int num, int nDefault) {
+int cLua::GetIntArgument(int num, int nDefault /*= 0*/) {
     return luaL_optinteger(m_pScriptContext, num, nDefault);
 }
 

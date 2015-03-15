@@ -17,9 +17,9 @@ public:
     bool		RunString(const char* pCommand);
     const char* GetErrorString(void);
 
-    bool		AddFunction(const char* pFunctionName, LuaFunctionType pFunction);
+    void		AddFunction(const char* pFunctionName, LuaFunctionType pFunction);
 
-    const char* GetStringArgument(int num, const char* pDefault = NULL);
+    const char* GetStringArgument(int num, const char* pDefault = nullptr);
     double		GetNumberArgument(int num, double dDefault = 0.0);
     int 		GetIntArgument(int num, int nDefault = 0);
 
@@ -31,7 +31,7 @@ public:
 
     lua_State*  GetScriptContext(void);
 
-private:
+protected:
     lua_State*  m_pScriptContext;
     void(*m_pErrorHandler)(const char *pError);
 };
