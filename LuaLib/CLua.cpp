@@ -66,7 +66,7 @@ bool cLua::RunScript(const char* pFname) {
     if (0 != luaL_dofile(m_pScriptContext, pFilename)) {
         if (m_pErrorHandler) {
             char buf[256];
-            sprintf_s(buf, 255, "Lua Error - Script Load\r\nScript Name:%s\r\nError Message:%s\r\n", pFilename, luaL_checkstring(m_pScriptContext, -1));
+            sprintf_s(buf, 255, "Lua Error - Script Load\nScript Name:%s\nError Message:%s\n", pFilename, luaL_checkstring(m_pScriptContext, -1));
             m_pErrorHandler(buf);
         }
         return false;
@@ -80,7 +80,7 @@ bool cLua::RunString(const char* pCommand) {
     if (0 != luaL_dostring(m_pScriptContext, pCommand)) {
         if (m_pErrorHandler) {
             char buf[256];
-            sprintf_s(buf, 255, "Lua Error - String Load\r\nString:%s\r\nError Message:%s\r\n", pCommand, luaL_checkstring(m_pScriptContext, -1));
+            sprintf_s(buf, 255, "Lua Error - String Load\nString:%s\nError Message:%s\n", pCommand, luaL_checkstring(m_pScriptContext, -1));
             m_pErrorHandler(buf);
         }
         return false;
