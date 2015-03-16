@@ -72,24 +72,6 @@ bool cLua::RunScript(const char* pFname) {
         return false;
     }
 
-    //if (0 != luaL_loadfile(m_pScriptContext, pFilename)) {
-    //	if(m_pErrorHandler) {
-    //		char buf[256];
-    //		sprintf(buf, "Lua Error - Script Load\nScript Name:%s\nError Message:%s\n", pFilename, luaL_checkstring(m_pScriptContext, -1));
-    //		m_pErrorHandler(buf);
-    //	}
-    //	return false;
-    //}
-
-    //if (0 != lua_pcall(m_pScriptContext, 0, LUA_MULTRET, 0)) {
-    //	if(m_pErrorHandler) {
-    //		char buf[256];
-    //		sprintf(buf, "Lua Error - Script Run\nScript Name:%s\nError Message:%s\n", pFilename, luaL_checkstring(m_pScriptContext, -1));
-    //		m_pErrorHandler(buf);
-    //	}
-    //	return false;
-    //}
-
     return true;
 
 }
@@ -103,24 +85,6 @@ bool cLua::RunString(const char* pCommand) {
         }
         return false;
     }
-
-    //if (0 != luaL_loadbuffer(m_pScriptContext, pCommand, strlen(pCommand), NULL)) {
-    //    if (m_pErrorHandler) {
-    //        char buf[256];
-    //        sprintf_s(buf, 255, "Lua Error - String Load\nString:%s\nError Message:%s\n", pCommand, luaL_checkstring(m_pScriptContext, -1));
-    //        m_pErrorHandler(buf);
-    //    }
-    //    return false;
-    //}
-
-    //if (0 != lua_pcall(m_pScriptContext, 0, LUA_MULTRET, 0)) {
-    //    if (m_pErrorHandler) {
-    //        char buf[256];
-    //        sprintf_s(buf, 255, "Lua Error - String Run\nString:%s\nError Message:%s\n", pCommand, luaL_checkstring(m_pScriptContext, -1));
-    //        m_pErrorHandler(buf);
-    //    }
-    //    return false;
-    //}
 
     return true;
 }
