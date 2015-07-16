@@ -129,3 +129,7 @@ void cLua::SetErrorHandler(void(*pErrHandler)(const char* pError)) {
 lua_State* cLua::GetScriptContext(void) {
     return m_pScriptContext;
 }
+
+void cLua::GarbageCollection() {
+    lua_gc(m_pScriptContext, LUA_GCCOLLECT, 0);
+}

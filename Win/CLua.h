@@ -35,6 +35,8 @@ public:
 
     void        SetErrorHandler(void(*pErrHandler)(const char* pError));
 
+    void        GarbageCollection();
+    
     lua_State*  GetScriptContext(void);
 
 protected:

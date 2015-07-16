@@ -99,6 +99,9 @@
     <ClInclude Include="src\lapi.h">
       <Filter>src</Filter>
     </ClInclude>
+    <ClInclude Include="..\Win\CLua.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CLua.cpp">
